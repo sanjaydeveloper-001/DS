@@ -1,0 +1,11 @@
+//ArrayList
+List<String> arrayList = new ArrayList<>();
+
+//Stack
+Stack<String> stack = new Stack<>();
+
+//Queue
+Queue<String> queue = new LinkedList<>();
+
+// LinkedList used directly
+LinkedList<String> linkedList = new LinkedList<>();
