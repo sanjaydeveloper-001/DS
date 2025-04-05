@@ -1,0 +1,63 @@
+//BS Tree Creation
+
+
+import java.util.*;
+
+class node{
+    node left;
+    node right;
+    int data;
+    node(int d){
+        data=d;
+    }
+}
+
+public class Main {
+    
+    //BST Insertion
+    static node ins(node root,int d){
+        
+        if(root==null)
+            return new node(d);
+        if(root.data >= d)
+            root.left=ins(root.left,d);
+        else
+            root.right=ins(root.right,d);
+        return root;
+    }
+    
+    //Display
+    static void dis(node r){
+        if(r==null)
+            return;
+        System.out.print(r.data+":");
+        if(r.left!=null){
+            System.out.print(" L:"+r.left.data+",");
+        }
+        if(r.right!=null){
+            System.out.print(" R:"+r.right.data+",");
+        }
+        System.out.println();
+        dis(r.left);
+        dis(r.right);
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        node root=null;
+        System.out.println("Enter the number of nodes : ");
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){
+            System.out.println("Enter Node "+(i+1)+":");
+            int d=sc.nextInt();
+            root=ins(root,d);
+        }
+        System.out.println("\nBST : ");
+        dis(root);
+    }
+}
+
+
+
+_________________________________________________________________
