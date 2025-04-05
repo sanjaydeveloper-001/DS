@@ -1,0 +1,56 @@
+//I think by my own
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head==null || head.next==null) return false; 
+
+        Set<ListNode> set=new HashSet<>();
+        set.add(head);
+        while(head.next!=null){
+            if(set.contains(head.next)){
+                break;
+            }
+            set.add(head.next);
+            head=head.next;
+        }
+
+        if(set.contains(head.next)) return true;
+        return false;
+
+    }
+}
+
+____________________________________________________________________
+
+//Optimised Code
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        Set<ListNode> s = new HashSet<>();
+        for (; head != null; head = head.next) {
+            if (!s.add(head)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+__________________________________________________________________
+
+//Very Optimised 
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(slow!=null && fast!=null&&fast.next!=null){
+            slow = slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+            return true;
+            }
+        }
+        return false;
+    }
+}
