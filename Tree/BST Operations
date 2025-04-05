@@ -85,17 +85,16 @@ public class Main {
         dis(r.right);
     }
     
+    
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         node root=null;
-
-        System.out.print("How many times u going to iterate");
+        System.out.println("How many times u going to iterate ?");
         int n=sc.nextInt();
-        System.out.print("1 - Insertion, 2- Search, 3- Deletion 4-Display, -1-Break");
+        System.out.println("1 - Insertion, 2- Search, 3- Deletion 4-Display, -1-Break");
         for(int i=0;i<n;i++){
           int ch=sc.nextInt();
-          while(ch!=-1){
-            if(ch==1){
+          if(ch==1){
                 int d=sc.nextInt();
                 root=ins(root,d);
             }
@@ -110,7 +109,6 @@ public class Main {
             if(ch==4){
                 dis(root);
             }
-          }
-      }
+        }
     }
 }
