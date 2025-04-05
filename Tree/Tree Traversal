@@ -1,0 +1,113 @@
+import java.io.*;
+import java.util.*;
+
+class node{
+    node right;
+    node left;
+    int data;
+    node(int d){
+        data=d;
+    }
+    
+}
+
+public class Solution {
+
+    static node root=null;
+    
+    //In-Order Traversal 
+    static void inord(node nn){
+        if(nn!=null){
+            inord(nn.left);
+            System.out.print(nn.data+" ");
+            inord(nn.right);
+        }
+    }
+    
+    //Pre-Order Traversal
+    static void preord(node nn){
+        if(nn!=null){
+            System.out.print(nn.data+" ");
+            preord(nn.left);
+            preord(nn.right);
+        }
+    }
+    
+    //Post-Order Traversal
+    static void postord(node nn){
+        if(nn!=null){
+            postord(nn.left);
+            postord(nn.right);
+            System.out.print(nn.data+" ");
+        }
+    }
+    
+    //Level-Order Traversal
+    static void levord(node nn){
+        Queue<node> q=new LinkedList<>();
+        q.add(nn);
+        while(!q.isEmpty()){
+            node t=q.poll();
+            System.out.print(t.data+" ");
+            if(t.left!=null){
+                q.add(t.left);
+            }
+            if(t.right!=null){
+                q.add(t.right);
+            }
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s[]=sc.nextLine().split(" ");
+        Queue<node> q=new LinkedList<>();
+
+        node root=new node(Integer.parseInt(s[0]));
+        q.add(root);
+        int i=1;
+        while(!q.isEmpty()){
+            node t=q.poll();
+            int d=Integer.parseInt(s[i++]);
+            if(d!=-1){
+                node nn=new node(d);
+                t.left=nn;
+                q.add(nn);
+            }
+            d=Integer.parseInt(s[i++]);
+            if(d!=-1){
+                node nn=new node(d);
+                t.right=nn;
+                q.add(nn);
+            }
+        }
+        
+        System.out.println("Level-order == 1 , Inorder == 2, preorder == 3, Postorder == 4 \n");
+        while(sc.hasNext()){
+            
+        int choice=sc.nextInt();
+        
+        if(choice==1){
+            System.out.println("Level-Order:Traversal : ");
+            levord(root);
+            System.out.println();
+        }
+        else if(choice==2){
+            System.out.println("In-Order:Traversal : ");
+            inord(root);
+            System.out.println();
+        }
+        else if(choice==3){
+            System.out.println("Pre-Order:Traversal : ");
+            preord(root);
+            System.out.println();
+        }
+        else if(choice==4){
+            System.out.println("Post-Order:Traversal : ");
+            postord(root);
+            System.out.println();
+        }
+        }
+    }
+}
