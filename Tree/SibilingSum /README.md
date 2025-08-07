@@ -15,11 +15,12 @@ The input represents the level order traversal of the binary tree:
 
 This represents the following tree:
 
-    1
-   / \\
-  2   3
- /     \\
-4       5
+     1
+    / \
+   2   3
+  /     \
+ 4       5
+
 
 ## Output Format
 
