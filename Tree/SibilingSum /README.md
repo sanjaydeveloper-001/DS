@@ -1,4 +1,3 @@
-readme_content = """
 # Single Child Nodes in Binary Tree
 
 ## Problem Statement
@@ -14,24 +13,13 @@ The input represents the level order traversal of the binary tree:
 ### Example Input:
 1 2 3 4 -1 -1 5 -1 -1 -1 -1
 
-yaml
-Always show details
-
-Copy
 This represents the following tree:
-markdown
-Always show details
 
-Copy
     1
    / \\
   2   3
  /     \\
 4       5
-sql
-Always show details
-
-Copy
 
 ## Output Format
 
@@ -39,11 +27,6 @@ Print the data values of nodes that have exactly one child (left or right but no
 
 ### Example Output:
 4 5
-
-pgsql
-Always show details
-
-Copy
 
 ## Approach
 
