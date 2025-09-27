@@ -1,6 +1,6 @@
 # Print Adjacency List 3
 
-## Problem Statement
+## Problem Statement -> [Image](https://s3.amazonaws.com/hr-assets/0/1722058293-7b9229db18-hc.png)
 Given the number of edges **E** and vertices **V** of a **bidirectional graph**, build the graph using an adjacency list and print the adjacency list for each vertex.
 
 ---
